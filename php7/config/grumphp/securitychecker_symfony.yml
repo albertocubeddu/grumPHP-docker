@@ -1,0 +1,10 @@
+# grumphp.yml
+grumphp:
+  tasks:
+    securitychecker_symfony_cicd:
+      lockfile: /code/composer.lock
+      format: ~
+      run_always: true
+      metadata:
+        blocking: true
+        task: securitychecker_symfony

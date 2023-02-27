@@ -1,0 +1,30 @@
+# grumphp.yml
+imports:
+  - { resource: /opt/config/grumphp/phpstan.yml }
+  - { resource: /opt/config/grumphp/securitychecker_symfony.yml }
+grumphp:
+  hooks_dir: ~
+  hooks_preset: local
+  git_hook_variables:
+    VAGRANT_HOST_DIR: .
+    EXEC_GRUMPHP_COMMAND: docker-compose exec -eXDEBUG_MODE=off -T test-tool
+    ENV: {}
+  stop_on_failure: false
+  ignore_unstaged_changes: false
+  hide_circumvention_tip: true
+  process_timeout: 60
+  ascii:
+    failed: ~
+    succeeded: ~
+  parallel:
+    enabled: true
+    max_workers: 32
+  fixer:
+    enabled: false
+    fix_by_default: false
+  environment:
+    files: []
+    variables: {}
+    paths: []
+  testsuites: []
+  extensions: []
